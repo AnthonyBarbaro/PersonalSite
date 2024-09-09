@@ -5,13 +5,12 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
-import './styles/global.css';
+import './styles/global.css';  // Global styling
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />

@@ -1,0 +1,58 @@
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navigation bar always fixed at the top */
+.nav-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for visibility */
+  padding: 20px 0;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+/* Highlight active section link */
+nav ul li a.active {
+  color: #ffcc00; /* Highlight color for active section */
+  border-bottom: 2px solid #ffcc00;
+}
+
+/* Full-height sections */
+.section {
+  height: 100vh; /* Full viewport height for each section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: transparent; /* Transparent background for no black boxes */
+}
+
+/* Home section styles */
+#home h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Parallax Container */
+.parallax-fullpage {
+  min-height: 100vh; /* Ensure the parallax section takes up full viewport height */
+  overflow: hidden; /* Make sure content isn't cut off */
+}
