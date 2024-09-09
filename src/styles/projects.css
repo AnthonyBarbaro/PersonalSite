@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 50px;
+  box-sizing: border-box; /* Ensure padding is included in height calculation */
 }
 
 .projects-list {
@@ -42,4 +43,62 @@
 
 .project-card a:hover {
   text-decoration: underline;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+}
+
+/* MEDIA QUERIES FOR MOBILE FRIENDLINESS */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 20px; /* Reduce padding on smaller screens */
+    min-height: calc(100vh - 50px); /* Make sure it takes into account mobile viewport */
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr; /* Stack project cards on top of each other on small screens */
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem; /* Slightly smaller font size for mobile */
+  }
+
+  .project-card a {
+    font-size: 1rem; /* Adjust link font size for mobile */
+  }
+
+  #projects h2 {
+    font-size: 2rem; /* Make section heading smaller for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 10px;
+    min-height: calc(100vh - 50px); /* Ensure proper height on very small screens */
+    margin-bottom: 120px; /* Add more space at the bottom on small screens */
+  }
+
+  .project-card {
+    padding: 10px;
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+  }
+
+  .project-card a {
+    font-size: 0.9rem;
+  }
+
+  #projects h2 {
+    font-size: 1.8rem;
+  }
 }

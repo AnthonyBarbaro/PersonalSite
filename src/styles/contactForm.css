@@ -1,0 +1,135 @@
+/* General Styles for the Contact Form */
+.contact-form-container {
+    max-width: 600px; /* Slightly reduce max width for better mobile experience */
+    width: 100%; /* Ensure it fits the screen */
+    margin: 0 auto;
+    padding: 30px; /* Adjust padding for better spacing */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    border-radius: 15px; /* Increase border radius */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for emphasis */
+    backdrop-filter: blur(10px); /* Adds blur effect to background */
+    color: white; /* Text color */
+    text-align: center;
+  }
+  
+  /* Form Title */
+  .contact-form-container h2 {
+    font-size: 2rem; /* Reduce font size for mobile */
+    margin-bottom: 25px;
+    color: #ffcc00; /* Gold color for the heading */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Slight shadow for heading */
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 20px; /* Reduce margin between fields */
+    text-align: left;
+  }
+  
+  /* Label Styles */
+  .form-group label {
+    display: block;
+    font-size: 1.3rem; /* Adjust label size */
+    color: #ffcc00; /* Matching label color with the title */
+    margin-bottom: 8px;
+  }
+  
+  /* Input Field Styles */
+  .form-group input,
+  .form-group textarea {
+    width: 90%;
+    padding: 12px; /* Reduce padding for mobile */
+    font-size: 1.1rem; /* Adjust font size for mobile */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Increase border radius */
+    background-color: rgba(255, 255, 255, 0.2); /* Slight transparency for inputs */
+    color: white;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Focused input fields */
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #ffcc00; /* Gold border on focus */
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly more visible background on focus */
+  }
+  
+  /* Textarea Styles */
+  .form-group textarea {
+    resize: vertical;
+    height: 180px; /* Adjust height for mobile */
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    display: inline-block;
+    padding: 12px 25px; /* Adjust button size */
+    background-color: #ffcc00; /* Gold button */
+    border: none;
+    border-radius: 8px;
+    color: #000; /* Black text */
+    font-size: 1.3rem; /* Adjust font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover Effect for Button */
+  .submit-btn:hover {
+    background-color: #ffa500; /* Darker gold on hover */
+  }
+  
+  /* Status Message Styles */
+  .form-status {
+    margin-top: 15px;
+    color: #00ff00; /* Green for success */
+    font-size: 1.2rem;
+  }
+  
+  /* Responsive Design for Smaller Devices */
+  @media (max-width: 768px) {
+    .contact-form-container {
+      padding: 20px; /* Reduce padding for smaller screens */
+      max-width: 90%; /* Ensure it fits smaller screens */
+    }
+  
+    .contact-form-container h2 {
+      font-size: 1.8rem; /* Smaller font for the heading */
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      font-size: 1rem; /* Adjust input text size */
+    }
+  
+    .submit-btn {
+      font-size: 1.2rem; /* Adjust button text size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-form-container {
+      padding: 15px; /* Further reduce padding for mobile */
+      max-width: 100%; /* Full width on smaller screens */
+    }
+  
+    .contact-form-container h2 {
+      font-size: 1.6rem; /* Smaller title for mobile */
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      padding: 10px; /* Reduce input padding */
+      font-size: 0.9rem; /* Smaller font size for smaller screens */
+    }
+  
+    .form-group textarea {
+      height: 150px; /* Adjust textarea height */
+    }
+  
+    .submit-btn {
+      font-size: 1.1rem; /* Adjust button size for mobile */
+      padding: 10px 20px; /* Adjust padding */
+    }
+  }
+  

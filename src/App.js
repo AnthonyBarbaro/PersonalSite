@@ -1,23 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
-import About from './pages/About';
-import './styles/global.css';  // Global styling
+import ProjectPage from './pages/ProjectPage';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Route for home page */}
+        <Route path="/projects" element={<Projects />} /> {/* Route for the list of projects */}
+        <Route path="/projects/:id" element={<ProjectPage />} /> {/* Dynamic route for individual project */}
+      </Routes>
     </Router>
   );
 }

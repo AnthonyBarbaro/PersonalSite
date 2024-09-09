@@ -9,7 +9,7 @@ function Projects() {
       <h2>My Projects</h2>
       <div className="projects-list">
         {projectData.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </div>

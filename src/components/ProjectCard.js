@@ -1,14 +1,16 @@
 import React from 'react';
-import '../styles/projectCard.css'; // Add specific styles for individual project cards
+import { Link } from 'react-router-dom';  // Import Link for navigation
+import '../styles/projectCard.css';  // Import CSS styles for individual project card
 
 function ProjectCard({ project }) {
   return (
     <div className="project-card">
-      <h3>{project.name}</h3>
+      <h3>{project.title}</h3>
       <p>{project.description}</p>
-      <a href={project.link} target="_blank" rel="noopener noreferrer">
+      {/* Link to the individual project page */}
+      <Link to={`/projects/${project.id}`} className="view-project-link">
         View Project
-      </a>
+      </Link>
     </div>
   );
 }
