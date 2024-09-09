@@ -1,0 +1,20 @@
+.project-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .project-card h2 {
+    font-size: 1.5em;
+  }
+  
+  .project-card p {
+    font-size: 1em;
+  }
+  
+  .project-card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
