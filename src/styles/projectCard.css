@@ -1,15 +1,40 @@
-.project-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.1)); /* Light to dark gradient */
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Add smooth background transition */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
+/* Container that holds the project cards */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for larger screens */
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
 }
 
-/* Add hover effect for desktop */
+@media (max-width: 768px) {
+  .projects-list {
+    grid-template-columns: 1fr; /* Ensure project cards stack vertically on mobile */
+    gap: 20px; /* Maintain spacing between stacked cards */
+  }
+}
+
+.project-card {
+  background: linear-gradient(135deg, rgba(150, 14, 14, 0.15), rgb(6, 144, 224)); /* Light to dark gradient */
+  padding: 100px 50px; /* Increased padding for a bigger card */
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column; /* Ensures the content inside the card stacks vertically */
+  justify-content: center; /* Centers the content */
+}
+
+.project-card-link {
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Ensure the text color remains the same */
+  display: block; /* Make the entire card clickable */
+  height: 100%; /* Ensures the link covers the full height of the card */
+}
+
 .project-card:hover {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1)); /* Reverse gradient on hover */
+  background: linear-gradient(135deg, rgb(6, 144, 224), rgba(255, 255, 255, 0.1)); /* Reverse gradient on hover */
   transform: scale(1.05); /* Slight scaling on hover */
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7); /* Increase shadow depth on hover */
 }
@@ -38,7 +63,9 @@
 @media (max-width: 768px) {
   .project-card {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgb(6, 144, 224)); /* Adjust gradient for mobile */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow for mobile */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 50px 25px; /* Reduce padding on mobile */
+    flex-direction: column; /* Ensure content stacks on mobile */
   }
 
   .project-card:hover {
@@ -47,11 +74,15 @@
   }
 
   .project-card h3 {
-    font-size: 1.2rem; /* Reduce font size for mobile */
-    
+    font-size: 1.2rem; /* Adjust font size for mobile */
+  }
+
+  .project-card p {
+    font-size: 1rem; /* Adjust font size for mobile */
+    margin-bottom: 15px;
   }
 
   .view-project-link {
-    font-size: 1rem; /* Adjust link font size for mobile */
+    font-size: 1rem;
   }
 }

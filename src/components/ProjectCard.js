@@ -1,17 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';  // Import Link for navigation
-import '../styles/projectCard.css';  // Import CSS styles for individual project card
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
+import '../styles/projectCard.css';
 
 function ProjectCard({ project }) {
   return (
-    <div className="project-card">
-      <h3>{project.title}</h3>
-      <p>{project.description}</p>
-      {/* Link to the individual project page */}
-      <Link to={`/projects/${project.id}`} className="view-project-link">
-        View Project
-      </Link>
-    </div>
+    <Link to={`/projects/${project.id}`} className="project-card-link"> {/* Wrap the entire card with a Link */}
+      <div className="project-card">
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+        {project.videoUrl && (
+          <iframe
+            src={project.videoUrl}
+            allow="autoplay"
+            title={project.title}
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        )}
+      </div>
+    </Link>
   );
 }
 

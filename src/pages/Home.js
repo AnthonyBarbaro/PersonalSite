@@ -44,7 +44,7 @@ function Home() {
     <div>
       <Header />
 
-      <Parallax bgImage={fireBack} strength={70} className="parallax-fullpage">
+      <Parallax bgImage={fireBack} strength={90} className="parallax-fullpage">
         <animated.section className="section" id="home" style={fadeInFromTop} ref={homeRef}>
           <h1>Hey, I'm Anthony Barbaro</h1>
         </animated.section>

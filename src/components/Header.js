@@ -16,7 +16,7 @@ function Header() {
           <li>
             {/* If on Home page, use react-scroll for smooth scroll */}
             {isHomePage ? (
-              <Link activeClass="active" to="home" spy={true} smooth={true} duration={500}>
+              <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} offset={-100}>
                 Home
               </Link>
             ) : (
@@ -26,7 +26,7 @@ function Header() {
           </li>
           <li>
             {isHomePage ? (
-              <Link activeClass="active" to="about" spy={true} smooth={true} duration={500}>
+              <Link activeClass="active" to="about" spy={true} smooth={true} duration={500} offset={0}>
                 About
               </Link>
             ) : (
@@ -35,7 +35,7 @@ function Header() {
           </li>
           <li>
             {isHomePage ? (
-              <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500}>
+              <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} offset={-70}>
                 Projects
               </Link>
             ) : (

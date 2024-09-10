@@ -1,9 +1,9 @@
 /* Ensure smooth scrolling behavior */
 html {
   scroll-behavior: smooth;
-  margin: 0; /* Removes default margin for the entire page */
-  padding: 0; /* Removes default padding for the entire page */
-  box-sizing: border-box; /* Apply box-sizing globally */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Navigation bar always fixed at the top */
@@ -11,11 +11,10 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for visibility */
-  padding: 15px 0; /* Reduced padding */
-  z-index: 1000; /* Ensure it stays on top */
-  margin: 0; /* Remove any margin */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow under the navbar */
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 15px 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -23,8 +22,8 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin: 0; /* Ensure no margin on nav */
-  padding: 0; /* Ensure no padding on nav */
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
@@ -37,21 +36,26 @@ nav ul li a {
 
 /* Highlight active section link */
 nav ul li a.active {
-  color: #ffcc00; /* Highlight color for active section */
+  color: #ffcc00;
   border-bottom: 2px solid #ffcc00;
 }
 
 /* Full-height sections */
 .section {
-  height: 100vh; /* Full viewport height for each section */
+  min-height: 90vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
   text-align: center;
   color: white;
-  background-color: transparent; /* Transparent background for no black boxes */
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
+}
+
+.section h1, .section h2 {
+  margin: 20px 0;
 }
 
 /* Home section styles */
@@ -61,34 +65,123 @@ nav ul li a.active {
 }
 
 #home h1 {
+  padding: 300px;
   font-size: 3rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  margin: 0; /* Remove any default margins */
 }
 
-/* Parallax Container */
-.parallax-fullpage {
-  min-height: 100vh; /* Ensure the parallax section takes up full viewport height */
-  overflow: hidden; /* Make sure content isn't cut off */
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove any padding */
+/* Contact section specific styles */
+.contact-section {
+  min-height: 80vh;
+  padding: 100px 20px;
 }
 
-/* Responsive Adjustments for Mobile */
-@media only screen and (max-width: 768px) {
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Adjust spacing for form */
+.contact-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Project card grid */
+.projects-section {
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+/* Responsive grid layout for project cards */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid that fits project cards */
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Project card styling */
+.project-card {
+  padding: 50px 25px;
+  background: linear-gradient(135deg, rgba(150, 14, 14, 0.15), rgb(6, 144, 224));
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Specific media query for screens around 1180px */
+@media (max-width: 1180px) {
+  .projects-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 2fr)); /* Allow cards to scale a bit smaller */
+    gap: 27px; /* Adjust gap for more even spacing */
+    scale: 0.82;
+  }
+
+  .project-card {
+    padding: 40px 20px;
+  }
+
+  .section h1, .section h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
   .nav-header {
-    padding: 10px 0; /* Reduce padding further on mobile */
+    padding: 10px 0;
   }
 
   nav ul li a {
-    font-size: 1rem; /* Adjust font size for mobile */
+    font-size: 1rem;
   }
 
   .section {
-    height: 90vh; /* Adjust section height for smaller screens */
+    padding-top: 80px;
+    padding-bottom: 40px;
   }
 
-  #home h1 {
-    font-size: 2rem; /* Adjust font size for mobile */
+  .section h1, .section h2 {
+    font-size: 2rem;
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 30px 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-header {
+    padding: 8px 0;
+  }
+
+  .section {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  .section h1, .section h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 20px 10px;
   }
 }

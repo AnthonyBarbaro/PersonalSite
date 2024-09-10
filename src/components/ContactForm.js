@@ -4,7 +4,8 @@ import '../styles/contactForm.css';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
+    from_name: '',  // Sender's name
+    to_name: 'Anthony Barbaro',  // Receiver's name (or company name)
     email: '',
     message: '',
   });
@@ -19,13 +20,19 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // EmailJS send function
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
+    // EmailJS send function using environment variables
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         setFormStatus('Message sent successfully!');
         setFormData({
-          name: '',
+          from_name: '',
+          to_name: 'Anthony Barbaro', // Reset to the default recipient name
           email: '',
           message: '',
         });
@@ -40,12 +47,12 @@ function ContactForm() {
       <h2>Contact Me</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="from_name">Name</label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
+            id="from_name"
+            name="from_name"
+            value={formData.from_name}
             onChange={handleInputChange}
             required
           />
