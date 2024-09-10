@@ -1,4 +1,4 @@
-# Project Name
+# React Website Portfolio 
 
 This is a personal portfolio website showcasing various projects, built using **React.js**. It features a parallax scrolling effect, smooth animations using **react-spring**, and project cards that are fully responsive. The project includes sections like **Home**, **About**, **Projects**, and **Contact** with a functional contact form powered by **EmailJS**.
 
