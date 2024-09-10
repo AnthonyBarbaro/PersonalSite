@@ -3,7 +3,7 @@ const projectData = [
     id: 1,  // Unique identifier for the project
     title: 'Personal Site',
     description: 'Personal Website -- the Current Website you are on, code base.',
-    videoUrl: 'https://www.youtube.com/embed/example?autoplay=1&mute=1&vq=hd1080&autohide=1&rel=0', // Add video URL if necessary
+    videoUrl: 'https://www.youtube.com/embed/IT6T-Ls828Y?autoplay=1&mute=1&vq=hd1080&autohide=1&rel=0', // Add video URL if necessary
     link: 'https://github.com/AnthonyBarbaro/PersonalSite'
   },
   {
@@ -27,6 +27,14 @@ const projectData = [
     videoUrl: 'https://www.youtube.com/embed/8MbH4hliKkk?autoplay=1&mute=1&vq=hd1080&autohide=1&rel=0', 
     link: 'https://github.com/AnthonyBarbaro/Weekly-Sales-Report-Automation'
   },
+  {
+    id: 5,  // Another unique identifier
+    title: 'Black Jack',
+    description: 'Python Chat Game',
+    videoUrl: 'https://www.youtube.com/embed/IlgIqkE14Ig?autoplay=1&mute=1&vq=hd1080&autohide=1&rel=0', 
+    link: 'https://github.com/AnthonyBarbaro/BlackJack'
+  },
+  
   // Add more projects here, each with a unique ID
 ];
 
