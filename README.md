@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Project Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a personal portfolio website showcasing various projects, built using **React.js**. It features a parallax scrolling effect, smooth animations using **react-spring**, and project cards that are fully responsive. The project includes sections like **Home**, **About**, **Projects**, and **Contact** with a functional contact form powered by **EmailJS**.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Project Structure](#project-structure)
+6. [Contributing](#contributing)
+7. [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Parallax scrolling** background for smooth transitions between sections.
+- **Animated sections** using `react-spring` and `react-intersection-observer`.
+- Fully responsive layout that works on both desktop and mobile.
+- **Project cards** with hover effects and links to GitHub repositories.
+- Contact form with **EmailJS** integration for sending emails.
+- Easy navigation with a **fixed navigation bar**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React.js**: Front-end library for building the website.
+- **React Router**: For handling navigation between different pages.
+- **React Spring**: For creating smooth animations.
+- **React Parallax**: For parallax background effects.
+- **React Intersection Observer**: For triggering animations when sections come into view.
+- **EmailJS**: For sending emails from the contact form.
+- **CSS**: Custom styles for layout, hover effects, and responsive design.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone the repository to your local machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    git clone https://github.com/your-username/your-repository.git
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project folder:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    cd your-repository
+    ```
 
-### `npm run eject`
+3. Install the required dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Create a `.env` file in the root of your project and add your **EmailJS** credentials:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```
+    REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+    REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+    REACT_APP_EMAILJS_USER_ID=your_user_id
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+To start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This will run the project on http://localhost:3000. Open this URL in your browser to see the website in action.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Project Structure
+├── public
+│   └── index.html           # Main HTML file
+├── src
+│   ├── assets               # Images and other assets
+│   ├── components           # Reusable components (Header, Footer, etc.)
+│   ├── pages                # Pages (Home, About, Projects, Contact)
+│   ├── styles               # CSS files for styling
+│   ├── App.js               # Main App component
+│   ├── index.js             # Main entry point for React
+│   └── data.js              # Data for project cards
+├── .env                     # Environment variables for EmailJS
+├── .gitignore               # Files to ignore in git
+├── package.json             # Project dependencies and scripts
+└── README.md                # Project README file
 
-### Analyzing the Bundle Size
+Contributing
+If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. All contributions are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+License
+This project is licensed under the MIT License. See the LICENSE file for more information.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Key Sections:
+- **Project Description**: Describes the main purpose and features of the website.
+- **Features**: Highlights the core functionalities of the project.
+- **Technologies Used**: Lists the key technologies that power the website.
+- **Installation**: Provides instructions on how to set up the project locally.
+- **Usage**: Explains how to run the project and what each folder contains.
+- **Contributing**: Information for people who want to contribute to the project.
+- **License**: MIT License information.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
