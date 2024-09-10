@@ -69,6 +69,7 @@ npm start
 This will run the project on http://localhost:3000. Open this URL in your browser to see the website in action.
 
 ## Project Structure
+```bash
 ├── public
 │   └── index.html           # Main HTML file
 ├── src
@@ -83,6 +84,7 @@ This will run the project on http://localhost:3000. Open this URL in your browse
 ├── .gitignore               # Files to ignore in git
 ├── package.json             # Project dependencies and scripts
 └── README.md                # Project README file
+  ```
 
 ## Contributing
 If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. All contributions are welcome!
