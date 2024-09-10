@@ -65,11 +65,10 @@ To start the development server:
 
 ```bash
 npm start
-
+```
 This will run the project on http://localhost:3000. Open this URL in your browser to see the website in action.
 
-
-Project Structure
+## Project Structure
 ├── public
 │   └── index.html           # Main HTML file
 ├── src
@@ -85,10 +84,10 @@ Project Structure
 ├── package.json             # Project dependencies and scripts
 └── README.md                # Project README file
 
-Contributing
+## Contributing
 If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. All contributions are welcome!
 
-License
+## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
 
 
