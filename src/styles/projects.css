@@ -17,16 +17,7 @@
   /* Allow the section to expand vertically if cards overflow */
 }
 
-.project-card {
-  background: linear-gradient(135deg, rgba(150, 14, 14, 0.15), rgb(6, 144, 224));
-  padding: 50px 25px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-  position: relative;
-  overflow: hidden;
-}
+
 
 .project-card:hover {
   transform: scale(1.05);

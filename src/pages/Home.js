@@ -1,66 +1,75 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Parallax } from 'react-parallax';
-import { useSpring, animated } from 'react-spring';
-import { useInView } from 'react-intersection-observer';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import fireBack from '../assets/3d-cartoon-night-sky.jpg';
 import About from './About';
 import Projects from './Projects';
 import ContactForm from '../components/ContactForm'; // Import the contact form
 import Header from '../components/Header';
+import SkillsChart from '../components/SkillsChart'; // Skills Chart Component
 
 import '../styles/home.css';
 
+// Register GSAP ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
 function Home() {
-  const [homeRef, homeInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [projectsRef, projectsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [contactRef, contactInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const fadeInFromTop = useSpring({
-    opacity: homeInView ? 1 : 0,
-    transform: homeInView ? 'translateY(0)' : 'translateY(-50px)',
-    config: { tension: 200, friction: 30 },
-  });
-
-  const fadeInFromLeft = useSpring({
-    opacity: aboutInView ? 1 : 0,
-    transform: aboutInView ? 'translateX(0)' : 'translateX(-50px)',
-    config: { tension: 200, friction: 30 },
-  });
-
-  const fadeInFromRight = useSpring({
-    opacity: projectsInView ? 1 : 0,
-    transform: projectsInView ? 'translateX(0)' : 'translateX(50px)',
-    config: { tension: 200, friction: 30 },
-  });
-
-  const fadeInContact = useSpring({
-    opacity: contactInView ? 1 : 0,
-    transform: contactInView ? 'translateY(0)' : 'translateY(50px)',
-    config: { tension: 200, friction: 30 },
-  });
+  useEffect(() => {
+    // GSAP ScrollTrigger animations for each section
+    gsap.utils.toArray(".section").forEach((section) => {
+      gsap.fromTo(section, {
+        opacity: 0,
+        y: 50,
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,  // Increase duration for smoother animation
+        ease: "power3.out",  // Smooth easing
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%", // Animation starts when the section is in view
+          end: "bottom 20%", // Ends before leaving the viewport
+          toggleActions: "play none none reverse",  // Trigger actions on scroll
+        },
+      });
+    });
+  }, []);
 
   return (
     <div>
       <Header />
 
+      {/* Parallax Background */}
       <Parallax bgImage={fireBack} strength={90} className="parallax-fullpage">
-        <animated.section className="section" id="home" style={fadeInFromTop} ref={homeRef}>
+        
+        {/* Home Section */}
+        <section className="section" id="home">
           <h1>Hey, I'm Anthony Barbaro</h1>
-        </animated.section>
+        </section>
 
-        <animated.section className="section" id="about" style={fadeInFromLeft} ref={aboutRef}>
+        {/* About Section */}
+        <section className="section" id="about">
           <About />
-        </animated.section>
+        </section>
 
-        <animated.section className="section" id="projects" style={fadeInFromRight} ref={projectsRef}>
+        {/* Projects Section */}
+        <section className="section" id="projects">
           <Projects />
-        </animated.section>
+        </section>
+
+        {/* Skills Section */}
+        <section className="section" id="skills">
+          <h1>My Skills</h1>
+          <SkillsChart /> {/* Animated Skills Chart */}
+        </section>
 
         {/* Contact Form Section */}
-        <animated.section className="section" id="contact" style={fadeInContact} ref={contactRef}>
+        <section className="section" id="contact">
           <ContactForm />
-        </animated.section>
+        </section>
+
       </Parallax>
     </div>
   );
