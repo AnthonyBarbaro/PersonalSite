@@ -1,14 +1,14 @@
 import React from 'react';
-import ProjectCard from '../components/ProjectCard'; // Ensure this component exists and works
-import projectData from '../data'; // Import your project data from data.js
-import '../styles/projects.css'; // Import your CSS styles for the Projects section
+import ProjectCard from '../components/ProjectCard';
+import projectData from '../data';
+import '../styles/projects.css';
 
 function Projects() {
   return (
     <div className="projects-section" id="projects">
-      <h2>My Projects</h2>
+      <h2>My Projects (Updated)</h2>
       <div className="projects-list">
-        {projectData.map((project, index) => (
+        {projectData.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>

@@ -1,33 +1,50 @@
+/* Parent container for the Projects section */
 .projects-section {
-  /* Remove the min-height to allow the section to expand dynamically */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 50px;
   box-sizing: border-box;
 }
 
+/* Grid layout for project cards */
 .projects-list {
   display: grid;
+  /* The auto-fit/minmax ensures responsive columns */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   max-width: 1200px;
   width: 100%;
-  /* Allow the section to expand vertically if cards overflow */
 }
 
+/* Project card styling */
+.project-card {
+  background: linear-gradient(135deg, rgba(150, 14, 14, 0.15), rgb(6, 144, 224));
+  padding: 50px 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 
+  /* Allow the card to grow with its content */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+/* Hover effect: scale and shadow, but keep text visible */
 .project-card:hover {
   transform: scale(1.05);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
 }
 
+/* Keep text and links visible on hover */
 .project-card h3,
 .project-card p,
 .project-card a {
   transition: opacity 0.3s ease;
+  opacity: 1; /* Ensure it's fully visible */
 }
 
 .project-card iframe {
@@ -38,20 +55,20 @@
   left: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* Prevent iframe from capturing hover events */
+  pointer-events: none; 
   border: none;
 }
 
-.project-card:hover h3,
-.project-card:hover p,
-.project-card:hover a {
-  opacity: 0;
-}
+/* Optional: if you want to show the iframe on hover, 
+   remove or adjust the fade-out of text. 
+   Below, we keep the text and iframe separate. 
+   You could do something like:
+   .project-card:hover iframe {
+     opacity: 1;
+   }
+*/
 
-.project-card:hover iframe {
-  opacity: 1;
-}
-
+/* Link styling */
 .view-project-link {
   color: #ffcc00;
   text-decoration: none;
@@ -63,10 +80,10 @@
   color: #ffa500;
 }
 
-/* Mobile-specific styles */
+/* ----- Mobile Responsive Styles ----- */
 @media (max-width: 768px) {
   .projects-list {
-    grid-template-columns: 1fr; /* Stack project cards vertically on mobile */
+    grid-template-columns: 1fr; /* Stack cards vertically on mobile */
   }
 
   .project-card {
@@ -88,6 +105,6 @@
   }
 
   .project-card iframe {
-    height: 200px; /* Set a reasonable height for iframe on mobile */
+    height: 200px; /* Example size for mobile if used */
   }
 }
