@@ -1,3 +1,4 @@
+//src/data.js
 const projectData = [
   {
     id: 1,

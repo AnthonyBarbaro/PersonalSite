@@ -1,3 +1,4 @@
+//src/pages/ProjectPage.js
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom'; 
 import { Parallax } from 'react-parallax';

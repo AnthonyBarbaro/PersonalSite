@@ -1,3 +1,4 @@
+//src/pages/Home.js
 import React, { useEffect } from 'react';
 import { Parallax } from 'react-parallax';
 import { gsap } from 'gsap';

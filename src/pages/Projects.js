@@ -1,3 +1,4 @@
+//src/pages/Projects.js
 import React from 'react';
 import ProjectCard from '../components/ProjectCard';
 import projectData from '../data';

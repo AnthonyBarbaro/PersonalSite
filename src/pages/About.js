@@ -1,3 +1,4 @@
+//src/pages/About.js
 import React from 'react';
 import '../styles/about.css';  // Add custom styles for the About section
 

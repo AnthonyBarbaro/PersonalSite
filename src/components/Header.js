@@ -1,3 +1,4 @@
+//src/components/Header.js
 import React from 'react';
 import { Link } from 'react-scroll'; // Used for smooth scrolling on the home page
 import { useLocation } from 'react-router-dom'; // To detect the current route
